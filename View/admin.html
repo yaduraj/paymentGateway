@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <script>
+            function setStatus() {
+                var url = "http://" + window.location.host + "/Admin/SetBankStatus";
+                var paymentStatus = {
+                    "IsSuccessful" : document.getElementById("status").value === "true" ? true : false,
+                    "ErrorMessage" : document.getElementById("error-message").value,
+                }
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(paymentStatus)
+                })
+            }
+        </script>
+        <div>
+            <h1>Set Acquiring Bank API Status</h1>
+            <div>
+                <label>Payment Successful(Set whether payment succeeded or not. Value is either true or false): </label>
+                <select id="status">
+                    <option value="true">true</option>
+                    <option value="false">false</option>
+                </select>
+            </div>
+            <div>
+                <label>Error Message(If the payment is not successful, set the reason for why it failed): </label>
+                <input id="error-message" type="text"/>
+            </div>
+            <button onclick="setStatus()">Set Status</button>
+        </div>
+    </body>
+</html>

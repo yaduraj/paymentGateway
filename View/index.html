@@ -1,0 +1,86 @@
+<html>
+    <body>
+        <script>
+            function makePayment() {
+                var url = "http://" + window.location.host + "/Payments/transaction";
+                var transaction = {
+                    "CardNumber" : document.getElementById("cc").value,
+                    "Amount" : Number(document.getElementById("amount").value),
+                    "CVV": document.getElementById("cvv").value,
+                    "ExpiryDate": document.getElementById("exp").value,
+                    "Currency": document.getElementById("currency").value
+                }
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(transaction)
+                }).then((res) => {
+                    return res.json();
+                }).then((data)=> {
+                    document.getElementById("result").innerHTML = JSON.stringify(data);
+                });
+            }
+
+            function getPaymentDetails()
+            {
+                var url = "http://" + window.location.host + "/Payments/transaction/";
+                var txId = document.getElementById("txn-id").value;
+                if(txId == "")
+                {
+                    document.getElementById("get-result").innerHTML = JSON.stringify("Please enter a transaction id.");
+                    return;
+                }
+                url += txId;
+
+                fetch(url).then((res) => {
+                    if(!res.ok) return res.text();
+                    return res.json()
+                }).then((data) => {
+                    document.getElementById("get-result").innerHTML = JSON.stringify(data);
+                }).catch((error) => {
+                    console.log(error);
+                });
+            }
+        </script>
+        <div>
+            <h1>Make Payment</h1>
+            <div>
+                <label>Amount: </label>
+                <input id="amount" type="text"/>
+            </div>
+            <div>
+                <label>Credit Card Number: </label>
+                <input id="cc" type="text"/>
+            </div>
+            <div>
+                <label>Expirty Date: </label>
+                <input id="exp" type="text"/>
+            </div>
+            <div>
+                <label>CVV: </label>
+                <input id="cvv" type="text"/>
+            </div>
+            <div>
+                <label>Currency (allowed values are GBP, USD, INR, EUR): </label>
+                <input id="currency" type="text"/>
+            </div>
+            <button onclick="makePayment()">Make Payment</button>
+            <div>
+                Transaction Result:
+                <div id="result">
+    
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1>Get Payment Details</h1>
+            <input id="txn-id" type="text"/>
+            <button onclick="getPaymentDetails()">Get Details</button>
+            <div>Payment Details:</div>
+            <div id="get-result">
+            </div>
+        </div>
+    </body>
+</html>
