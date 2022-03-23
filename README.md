@@ -41,5 +41,5 @@ curl --location --request POST 'http://localhost:8080/Admin/SetBankStatus' \
     "IsSuccessful" : false,
     "ErrorMessage" : "Insufficient funds"
 }'
-![image](https://user-images.githubusercontent.com/1962992/159688903-ca372d29-7278-4802-bf33-b8077c51955c.png)
+
 
