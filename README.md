@@ -14,14 +14,14 @@
 5. If you wish to make separate curl calls and not use the UI, samples are provided at the bottom of the document.
 
 
-Sample Curl Calls: \
+<h2>Sample Curl Calls: </h2>
 
-Curl call for getting a transaction '
+**Curl call for getting a transaction** \
 curl --location --request GET 'http://localhost:8080/Payments/transaction/{transactionID}'
 
 
 
-Curl call for making a transaction \
+**Curl call for making a transaction** \
 curl --location --request POST 'http://localhost:8080/Payments/transaction' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -32,7 +32,7 @@ curl --location --request POST 'http://localhost:8080/Payments/transaction' \
     "Currency": "GBP"
 }'
 
-Curl call to set the acquiring bank status
+**Curl call to set the acquiring bank status**
 
 curl --location --request POST 'http://localhost:8080/Admin/SetBankStatus' \
 --header 'Content-Type: application/json' \
