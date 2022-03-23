@@ -1,10 +1,11 @@
 <h2>Running the project</h2>
 1. Clone the repo from https://github.com/yaduraj/paymentGateway<br>
-2. Linux /MacOS <br>    
+2. Linux /MacOS: <br>    
 &nbsp;&nbsp;&nbsp;&nbsp;Run the following command from the root folder from the terminal:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;sh startup.sh
 
-&nbsp;&nbsp;&nbsp;&nbsp;Windows \
+
+&nbsp;&nbsp;&nbsp;&nbsp;Windows: \
 &nbsp;&nbsp;&nbsp;&nbsp;Go to Powershell and cd to the root folder and run the following commands. \
 &nbsp;&nbsp;&nbsp;&nbsp;1. bash \
 &nbsp;&nbsp;&nbsp;&nbsp;2. sh startup.sh \
