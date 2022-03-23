@@ -1,5 +1,5 @@
-<h2>Running the project</h2> \
-1. Clone the repo from https://github.com/yaduraj/paymentGateway \
+<h2>Running the project</h2>
+1. Clone the repo from https://github.com/yaduraj/paymentGateway
 2. Linux /MacOS \
    Run the following command from the root folder from the terminal: \
    sh startup.sh \
