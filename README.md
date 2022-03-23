@@ -1,6 +1,6 @@
 1. Clone the repo from https://github.com/yaduraj/paymentGateway 
 2. Linux /MacOS
-   Run the following command from the root folder from the terminal: 
+   Run the following command from the root folder from the terminal: \
    sh startup.sh
 
    Windows
@@ -14,14 +14,14 @@
 5. If you wish to make separate curl calls and not use the UI, samples are provided at the bottom of the document.
 
 
-Sample Curl Calls:
+Sample Curl Calls: \
 
-Curl call for getting a transaction
+Curl call for getting a transaction '
 curl --location --request GET 'http://localhost:8080/Payments/transaction/{transactionID}'
 
 
 
-Curl call for making a transaction
+Curl call for making a transaction \
 curl --location --request POST 'http://localhost:8080/Payments/transaction' \
 --header 'Content-Type: application/json' \
 --data-raw '{
